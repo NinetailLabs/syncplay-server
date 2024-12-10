@@ -15,7 +15,7 @@ if [ -n "$ISOLATE" ]; then
 fi
 
 if [ -n "$MOTD" ]; then
-  echo "$MOTD" >> /app/syncplay/motd
+  echo "$MOTD" > /app/syncplay/motd
   args="$args --motd-file=/app/syncplay/motd"
 fi
 
