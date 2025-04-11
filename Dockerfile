@@ -1,4 +1,4 @@
-FROM python:3.7-alpine as build
+FROM python:3.13-alpine as build
 
 RUN apk add --no-cache --progress \
         build-base \
@@ -16,7 +16,7 @@ RUN pip install -U pip
 # Unless this environment variable is set, Syncplay's setup.py tries to grab GUI dependencies
 RUN SNAPCRAFT_PART_BUILD=1 pip wheel file:///source#egg=syncplay
 
-FROM python:3.7-alpine
+FROM python:3.13-alpine
 
 RUN  apk add --no-cache --update --progress \
         openssl \
